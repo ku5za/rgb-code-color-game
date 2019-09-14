@@ -1,0 +1,31 @@
+.game-console__button {
+    min-height: 1em;
+    min-width: 1em;
+    padding: 0.5em;
+    
+    border: 1px solid rgb(255, 202, 57);
+    border-radius: 2px;
+    background: rgb(255, 202, 57);
+    outline-color: black;
+
+    text-transform: uppercase;
+    font-weight: 900;
+    color: black;
+
+    transition: all .1s;
+} 
+
+.game-console__button:hover {
+    cursor: pointer;
+    border: 1px solid rgb(255, 202, 57);
+    background-color: rgb(255, 202, 57);
+}
+
+.game-console__button:active {
+    transform: scale(0.99);
+    background-color: rgb(218, 172, 49);
+}
+
+.game-console__button:focus {
+    border-color: black;
+}

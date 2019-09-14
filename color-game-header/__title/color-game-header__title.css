@@ -1,0 +1,9 @@
+.color-game-header__title {
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: cornflowerblue;
+    margin: 0;
+    padding: 1em 0;
+    color: white;
+}

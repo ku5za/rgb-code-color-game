@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Color game</title>
+    <link rel="stylesheet" href="css/index__style.css">
+</head>
+<body>
+    <header class="color-game-header">
+        <h1 class="color-game-title color-game-header__title">
+            The great
+            <br />
+            <span class="rgb-code color-game-title__rgb-code">
+                RGB(
+                <span class="rgb-code__red-part"></span>,
+                <span class="rgb-code__green-part"></span>,
+                <span class="rgb-code__blue-part"></span>
+                )
+            </span>
+            <br />
+            guessing game
+        </h1>
+        <section class="game-console">
+            <div class="game-console__buttons">
+                <button class="game-console__button game-console__button_shuffle">Shuffle</button>
+                <div class="game-console__level-buttons">
+                    <button class="game-console__button game-console__button_easy game-console__button_active">Easy</button>
+                    <button class="game-console__button game-console__button_hard">Hard</button>
+                </div>
+            </div>
+        </section>
+    </header>
+    <main class="main">
+        <article class="article main__color-game-article">
+            <section class="color-samples">
+                <div class="color-samples__row">
+                    <div class="color-samples__color-sample"></div>
+                    <div class="color-samples__color-sample"></div>
+                    <div class="color-samples__color-sample"></div>
+                </div>
+                <div class="color-samples__row color-samples__row_hidden">
+                    <div class="color-samples__color-sample"></div>
+                    <div class="color-samples__color-sample"></div>
+                    <div class="color-samples__color-sample"></div>
+                </div>
+            </section>
+        </article>
+    </main>
+    <script src="javascript/index__script.js"></script>
+</body>
+</html>

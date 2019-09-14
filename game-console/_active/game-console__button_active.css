@@ -1,0 +1,4 @@
+.game-console__button_active {
+    transform: scale(0.97);
+    border-color: black;
+}

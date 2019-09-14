@@ -1,0 +1,9 @@
+.game-console__buttons {
+    box-sizing: border-box;
+    width: 50%;
+    min-width: 15em;
+    max-width: 45em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
