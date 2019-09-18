@@ -1,5 +1,5 @@
 'use strict';
-import {createRGBcode} from '../rgb-code/rgb-code.js';
+import {createRGBcode, getRandomInt} from '../rgb-code/rgb-code.js';
 import ("./__color-sample/color-samples__color-sample.js");
 
 let colorSamplesRows = document.querySelectorAll(".color-samples__row");
@@ -42,7 +42,8 @@ function appendDrawnColor() {
     let maxIndex = returnVisibleRowsNumber() * 3;
     let randomIndex = getRandomInt(maxIndex);
 
-    colorSamplesRows[randomIndex].style.backgroundColor = drawnColor;
+    colorSamples[randomIndex].style.backgroundColor = drawnColor;
 }
+appendDrawnColor();
 
 console.log("%c CONNECTED", "color: blue;");
