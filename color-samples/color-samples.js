@@ -1,5 +1,5 @@
 'use strict';
-import {createRGBcode, getRandomInt} from '../rgb-code/rgb-code.js';
+import {createRGBcode, getRandomInt } from '../rgb-code/rgb-code.js';
 import ("./__color-sample/color-samples__color-sample.js");
 
 let colorSamplesRows = document.querySelectorAll(".color-samples__row");

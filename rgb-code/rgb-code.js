@@ -1,5 +1,5 @@
 'use strict';
-let rgbCode = document.querySelector(".rgb-code");
+export let rgbCode = document.querySelector(".rgb-code");
 
 export function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
@@ -24,6 +24,9 @@ export function createRGBcode() {
     return rgbCode;
 }
 
-rgbCode.textContent = createRGBcode();
+export function updateRGBcodeTextContent() {
+    rgbCode.textContent = createRGBcode();
+}
+updateRGBcodeTextContent();
 
 console.log("%c RGB-CODE CONNECTED", "color: red;");
