@@ -1,4 +1,5 @@
 'use strict';
+
 export let rgbCode = document.querySelector(".rgb-code");
 
 export function getRandomInt(max) {
