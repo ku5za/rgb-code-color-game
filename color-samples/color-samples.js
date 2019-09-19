@@ -31,20 +31,28 @@ function returnVisibleRowsNumber() {
     return visibleRowsNumber;
 }
 
-function appendColorsToSamples() {
+function setRandomColorsToSamples() {
     for(let color of colorSamples) {
         let colorCode = createRGBcode();
         color.style.backgroundColor = colorCode;
     }
 }
-appendColorsToSamples();
 
-function appendDrawnColorToRandomSample() {
+function setDrawnByLotsColorToRandomSample() {
     let maxIndex = returnVisibleRowsNumber() * 3;
     let randomIndex = getRandomInt(maxIndex);
 
     colorSamples[randomIndex].style.backgroundColor = drawnColor;
 }
-appendDrawnColorToRandomSample();
 
+function appendColorsToSamples() {
+    setRandomColorsToSamples();
+    setDrawnByLotsColorToRandomSample();
+}
+
+appendColorsToSamples();
+
+export {
+    appendColorsToSamples
+}
 console.log("%c color-samples.js connected", "color: blue;");
