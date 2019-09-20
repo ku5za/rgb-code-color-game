@@ -1,11 +1,9 @@
 'use strict';
 
-import {createRGBcode, getRandomInt } from '../rgb-code/rgb-code.js';
-import "./__color-sample/color-samples__color-sample.js";
+import {createNewRGBcode, getRandomInt} from '../rgb-code/rgb-code.js';
 
 let colorSamplesRows = document.querySelectorAll(".color-samples__row");
 let colorSamples = document.querySelectorAll(".color-samples__color-sample");
-let drawnColor = document.querySelector(".color-game-title__rgb-code").textContent;
 
 function isRowHidden(row) {
     if(row.classList.contains("color-samples__row_hidden")) {
@@ -33,12 +31,13 @@ function returnVisibleRowsNumber() {
 
 function setRandomColorsToSamples() {
     for(let color of colorSamples) {
-        let colorCode = createRGBcode();
+        let colorCode = createNewRGBcode();
         color.style.backgroundColor = colorCode;
     }
 }
 
 function setDrawnByLotsColorToRandomSample() {
+    let drawnColor = document.querySelector(".color-game-title__rgb-code").textContent;
     let maxIndex = returnVisibleRowsNumber() * 3;
     let randomIndex = getRandomInt(maxIndex);
 

@@ -1,0 +1,11 @@
+{
+  "name": "color_game",
+  "version": "1.0.0",
+  "description": "Simple game which allows you to guess which color match the drawn by lots RGB format.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jędrzej Kuszewski",
+  "license": "ISC"
+}

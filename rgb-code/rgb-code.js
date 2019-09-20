@@ -14,7 +14,7 @@ function drawRGBcolor() {
     }
 }
 
-export function createRGBcode() {
+export function createNewRGBcode() {
     let color = drawRGBcolor();
     let rgbCode = "RGB(";
 
@@ -25,9 +25,9 @@ export function createRGBcode() {
     return rgbCode;
 }
 
-export function updateRGBcodeTextContent() {
-    rgbCode.textContent = createRGBcode();
+export function setNewRGBcodeTextContent() {
+    rgbCode.textContent = createNewRGBcode();
 }
-updateRGBcodeTextContent();
+setNewRGBcodeTextContent();
 
 console.log("%c RGB-CODE CONNECTED", "color: red;");
