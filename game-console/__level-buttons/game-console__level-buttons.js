@@ -3,13 +3,17 @@
 import { showHardLevelRow, hideHardLevelRow } from '../../color-samples/__row/color-samples__row.js';
 import { setNewRGBcodeTextContent } from '../../rgb-code/rgb-code.js';
 import { appendColorsToSamples } from '../../color-samples/color-samples.js';
+import { resetGuessedColorSamples } from '../../color-samples/__color-sample/color-samples__color-sample.js';
 
 let levelButtons = document.querySelectorAll('.game-console__level-buttons > .game-console__button');
 
-function whichLevelIsActiveNow() {
-    let currentActiveLevel = document.querySelector('.game-console__button_active');
-
-    return currentActiveLevel;
+for(const button of levelButtons) {
+    button.addEventListener("click", () => {
+        setButtonAsActive(button);
+        resetGuessedColorSamples();
+        setNewRGBcodeTextContent();
+        appendColorsToSamples();
+    });
 }
 
 function setButtonAsActive(level) {
@@ -26,10 +30,8 @@ function setButtonAsActive(level) {
     }
 }
 
-for(const button of levelButtons) {
-    button.addEventListener("click", () => {
-        setButtonAsActive(button);
-        setNewRGBcodeTextContent();
-        appendColorsToSamples();
-    });
+function whichLevelIsActiveNow() {
+    let currentActiveLevel = document.querySelector('.game-console__button_active');
+
+    return currentActiveLevel;
 }

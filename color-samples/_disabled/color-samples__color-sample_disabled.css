@@ -5,6 +5,8 @@
     align-items: center;
     
     animation: disabled-in .5s ease-in 1.2s forwards;
+
+    transition: all .5s;
 }
 
 @keyframes disabled-in {

@@ -1,9 +1,3 @@
-.color-samples__color-sample_checked {
-    padding: 0;
-
-    display: block;
-}
-
 .color-samples__color-sample_checked::before {
     content: "";
 

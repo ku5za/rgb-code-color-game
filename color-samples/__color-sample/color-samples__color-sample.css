@@ -5,9 +5,10 @@
     height: auto;
     border: 1px solid black;
     border-radius: 5%;
+
+    transition: background-color .3s;
 }
 
 .color-samples__color-sample:hover {
     cursor: pointer;
 }
-
