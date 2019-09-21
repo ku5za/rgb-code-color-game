@@ -1,17 +1,36 @@
 'use strict';
 
-import {createNewRGBcode, getRandomInt} from '../rgb-code/rgb-code.js';
+import { createNewRGBcode, getRandomInt, getActualRGBcodeTextContent } from '../rgb-code/rgb-code.js';
+import { compareToDrawnRGBcode } from "./__color-sample/color-samples__color-sample.js";
 
 let colorSamplesRows = document.querySelectorAll(".color-samples__row");
 let colorSamples = document.querySelectorAll(".color-samples__color-sample");
 
-function isRowHidden(row) {
-    if(row.classList.contains("color-samples__row_hidden")) {
-        return true;
+for (const colorSample of colorSamples) {
+    colorSample.addEventListener("click", () => {
+        compareToDrawnRGBcode(colorSample);
+    });
+}
+
+function appendColorsToSamples() {
+    setRandomColorsToSamples();
+    setDrawnByLotsColorToRandomSample();
+}
+appendColorsToSamples();
+
+function setRandomColorsToSamples() {
+    for(let color of colorSamples) {
+        let colorCode = createNewRGBcode();
+        color.style.backgroundColor = colorCode;
     }
-    else {
-        return false;
-    }
+}
+
+function setDrawnByLotsColorToRandomSample() {
+    let drawnColor = getActualRGBcodeTextContent();
+    let maxIndex = returnVisibleRowsNumber() * 3;
+    let randomIndex = getRandomInt(maxIndex);
+
+    colorSamples[randomIndex].style.backgroundColor = drawnColor;
 }
 
 function returnVisibleRowsNumber() {
@@ -29,29 +48,15 @@ function returnVisibleRowsNumber() {
     return visibleRowsNumber;
 }
 
-function setRandomColorsToSamples() {
-    for(let color of colorSamples) {
-        let colorCode = createNewRGBcode();
-        color.style.backgroundColor = colorCode;
+function isRowHidden(row) {
+    if(row.classList.contains("color-samples__row_hidden")) {
+        return true;
+    }
+    else {
+        return false;
     }
 }
-
-function setDrawnByLotsColorToRandomSample() {
-    let drawnColor = document.querySelector(".color-game-title__rgb-code").textContent;
-    let maxIndex = returnVisibleRowsNumber() * 3;
-    let randomIndex = getRandomInt(maxIndex);
-
-    colorSamples[randomIndex].style.backgroundColor = drawnColor;
-}
-
-function appendColorsToSamples() {
-    setRandomColorsToSamples();
-    setDrawnByLotsColorToRandomSample();
-}
-
-appendColorsToSamples();
 
 export {
     appendColorsToSamples
 }
-console.log("%c color-samples.js connected", "color: blue;");

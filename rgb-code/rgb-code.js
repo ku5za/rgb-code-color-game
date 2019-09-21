@@ -2,8 +2,17 @@
 
 export let rgbCode = document.querySelector(".rgb-code");
 
-export function getRandomInt(max) {
-    return Math.floor(Math.random() * Math.floor(max));
+export function setNewRGBcodeTextContent() {
+    rgbCode.textContent = createNewRGBcode();
+}
+setNewRGBcodeTextContent();
+
+export function createNewRGBcode() {
+    let color = drawRGBcolor();
+
+    let rgbCode = "RGB(" + color.red + ", " + color.green + ", " + color.blue + ")";
+
+    return rgbCode;
 }
 
 function drawRGBcolor() {
@@ -14,20 +23,10 @@ function drawRGBcolor() {
     }
 }
 
-export function createNewRGBcode() {
-    let color = drawRGBcolor();
-    let rgbCode = "RGB(";
-
-    rgbCode += color.red + ", ";
-    rgbCode += color.green + ", ";
-    rgbCode += color.blue + ")";
-
-    return rgbCode;
+export function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
 }
 
-export function setNewRGBcodeTextContent() {
-    rgbCode.textContent = createNewRGBcode();
+export function getActualRGBcodeTextContent() {
+    return document.querySelector(".rgb-code").textContent;
 }
-setNewRGBcodeTextContent();
-
-console.log("%c RGB-CODE CONNECTED", "color: red;");

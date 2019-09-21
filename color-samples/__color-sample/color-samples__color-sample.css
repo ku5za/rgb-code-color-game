@@ -6,3 +6,8 @@
     border: 1px solid black;
     border-radius: 5%;
 }
+
+.color-samples__color-sample:hover {
+    cursor: pointer;
+}
+

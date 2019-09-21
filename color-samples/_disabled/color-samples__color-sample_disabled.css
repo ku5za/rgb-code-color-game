@@ -1,0 +1,66 @@
+.color-samples__color-sample_disabled {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+    animation: disabled-in .5s ease-in 1.2s forwards;
+}
+
+@keyframes disabled-in {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.color-samples__color-sample_disabled::before {
+    content: "";
+    
+    position: absolute;
+    height: 2px;
+    
+    background-color: red;
+    transform: rotateZ(45deg);
+
+    animation: cross-in-before;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    animation-duration: 0.2s;
+    animation-delay: .2s;
+}
+
+@keyframes cross-in-before {
+    from {
+        width: 0;
+    }
+    to {
+        width: 10rem;
+    }
+}
+
+.color-samples__color-sample_disabled::after {
+    content: "";
+    
+    position: absolute;
+    height: 2px;
+    
+    background-color: red;
+    transform: rotateZ(-45deg);
+
+    animation: cross-in-after;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    animation-duration: 0.2s;
+}
+
+@keyframes cross-in-after {
+    from {
+        width: 0;
+    }
+    to {
+        width: 10rem;
+    }
+}
