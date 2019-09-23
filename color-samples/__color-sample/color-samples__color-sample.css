@@ -1,14 +1,14 @@
 .color-samples__color-sample {
-    min-height: 5em;
-    width: 30%;
-    max-width: 15em;
-    height: auto;
+    height: 12.5em;
+    width: 12.5em;
     border: 1px solid black;
-    border-radius: 5%;
+    box-shadow: 0 0 black;
 
-    transition: background-color .3s;
+    transition: background-color .3s, box-shadow .3s;
 }
 
 .color-samples__color-sample:hover {
     cursor: pointer;
+
+    box-shadow: .75rem .75rem black;
 }

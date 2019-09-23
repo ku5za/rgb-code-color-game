@@ -2,12 +2,11 @@
     min-height: 1em;
     min-width: 1em;
     padding: 0.5em;
-    
-    border: 1px solid rgb(255, 202, 57);
-    border-radius: 2px;
-    background: rgb(255, 202, 57);
-    outline-color: black;
 
+    background: none;
+    border: none;
+    outline: none;
+    
     text-transform: uppercase;
     font-weight: 900;
     color: black;
@@ -17,15 +16,32 @@
 
 .game-console__button:hover {
     cursor: pointer;
-    border: 1px solid rgb(255, 202, 57);
-    background-color: rgb(255, 202, 57);
-}
-
-.game-console__button:active {
-    transform: scale(0.99);
-    background-color: rgb(218, 172, 49);
 }
 
 .game-console__button:focus {
     border-color: black;
+}
+
+.game-console__button::before {
+    content: "";
+
+    position: relative;
+    display: block;
+
+    bottom: -1.5rem;
+    left: -5px;
+    z-index: -1;
+
+    width: 1rem;
+    height: 1.5rem;
+    
+    background-color: red;
+
+    transition: width .2s;
+}
+
+.game-console__button:hover::before {
+    content: "";
+
+    width: 2rem;
 }

@@ -1,4 +1,13 @@
-.game-console__button_active {
-    transform: scale(0.97);
-    border-color: black;
+.game-console__button_active::after {
+    content: "";
+
+    display: block;
+
+    width: 100%;
+    height: .25rem;
+
+    bottom: 0;
+    left: 0;
+
+    background-color: red;
 }
