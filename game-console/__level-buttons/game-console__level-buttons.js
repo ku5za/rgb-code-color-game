@@ -2,7 +2,7 @@
 
 import { showHardLevelRow, hideHardLevelRow } from '../../color-samples/__row/color-samples__row.js';
 import { setNewRGBcode } from '../../rgb-code/rgb-code.js';
-import { appendColorsToSamples } from '../../color-samples/color-samples.js';
+import { appendColorsToSamples, newColorsCall } from '../../color-samples/color-samples.js';
 import { resetGuessedColorSamples } from '../../color-samples/__color-sample/color-samples__color-sample.js';
 
 let levelButtons = document.querySelectorAll('.game-console__level-buttons > .game-console__button');
@@ -10,9 +10,14 @@ let levelButtons = document.querySelectorAll('.game-console__level-buttons > .ga
 for(const button of levelButtons) {
     button.addEventListener("click", () => {
         setButtonAsActive(button);
-        resetGuessedColorSamples();
-        setNewRGBcode();
-        appendColorsToSamples();
+        if(newColorsCall.getNewColorsCallValue()) {
+            return;
+        }
+        else {
+            resetGuessedColorSamples();
+            setNewRGBcode();
+            appendColorsToSamples();
+        }
     });
 }
 

@@ -1,12 +1,12 @@
 'use strict';
 
 import { getActualRGBcode, setNewRGBcode } from "./../../rgb-code/rgb-code.js";
-import { appendColorsToSamples } from '../../color-samples/color-samples.js';
+import { appendColorsToSamples, newColorsCall } from '../../color-samples/color-samples.js';
 
 const correctGuessClassName = "color-samples__color-sample_checked";
 const wrongGuessClassName = "color-samples__color-sample_disabled";
 
-function compareToDrawnRGBcode(colorSample) {
+export function compareToDrawnRGBcode(colorSample) {
     if(matchesDrawnRGBcode(colorSample)) {
         markCorrectGuessedColorSample(colorSample);
         setDrawnByLotsColorToAllColorSamples();
@@ -27,13 +27,22 @@ function matchesDrawnRGBcode(colorSample) {
     }
 }
 
+function markCorrectGuessedColorSample(colorSample) {
+    if(isAlreadyGuessedCorrectly()) {
+        return;
+    }
+    else {
+        colorSample.classList.add(correctGuessClassName);
+    }
+}
+
 function setDrawnByLotsColorToAllColorSamples() {
     let colorSamples = document.querySelectorAll(".color-samples__color-sample");
     let actualRGBcode = getActualRGBcode();
     
     let timeout = 0;
     for(let i = 0; i < colorSamples.length; i++) {
-        if(markCorrectGuessedColorSample(colorSamples[i])) {
+        if(matchesDrawnRGBcode(colorSamples[i])) {
             continue;
         }
         else {
@@ -50,15 +59,8 @@ function setDrawnByLotsColorToAllColorSamples() {
         setNewRGBcode();
         appendColorsToSamples();
     }, timeout + 1000);
-}
 
-function markCorrectGuessedColorSample(colorSample) {
-    if(isAlreadyGuessedCorrectly()) {
-        return;
-    }
-    else {
-        colorSample.classList.add(correctGuessClassName);
-    }
+    newColorsCall.setNewColorsCallAs(true);
 }
 
 function disableWrongGuessedColorSample(colorSample) {
@@ -80,7 +82,7 @@ function isAlreadyGuessedCorrectly() {
     }
 }
 
-function resetGuessedColorSamples() {
+export function resetGuessedColorSamples() {
     clearCorrectGuessedColorSample();
     clearWrongGuessedColorSamples();
 }
@@ -107,9 +109,4 @@ function clearWrongGuessedColorSample(colorSample) {
     if(colorSample) {
         colorSample.classList.remove(wrongGuessClassName);
     }
-}
-
-export {
-    compareToDrawnRGBcode,
-    resetGuessedColorSamples
 }
