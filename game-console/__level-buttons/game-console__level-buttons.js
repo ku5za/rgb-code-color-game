@@ -1,7 +1,7 @@
 'use strict';
 
 import { showHardLevelRow, hideHardLevelRow } from '../../color-samples/__row/color-samples__row.js';
-import { setNewRGBcodeTextContent } from '../../rgb-code/rgb-code.js';
+import { setNewRGBcode } from '../../rgb-code/rgb-code.js';
 import { appendColorsToSamples } from '../../color-samples/color-samples.js';
 import { resetGuessedColorSamples } from '../../color-samples/__color-sample/color-samples__color-sample.js';
 
@@ -11,7 +11,7 @@ for(const button of levelButtons) {
     button.addEventListener("click", () => {
         setButtonAsActive(button);
         resetGuessedColorSamples();
-        setNewRGBcodeTextContent();
+        setNewRGBcode();
         appendColorsToSamples();
     });
 }

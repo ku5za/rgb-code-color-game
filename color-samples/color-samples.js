@@ -1,6 +1,6 @@
 'use strict';
 
-import { createNewRGBcode, getRandomInt, getActualRGBcodeTextContent } from '../rgb-code/rgb-code.js';
+import { createNewRGBcode, getRandomInt, getActualRGBcode } from '../rgb-code/rgb-code.js';
 import { compareToDrawnRGBcode } from "./__color-sample/color-samples__color-sample.js";
 
 let colorSamplesRows = document.querySelectorAll(".color-samples__row");
@@ -26,7 +26,7 @@ function setRandomColorsToSamples() {
 }
 
 function setDrawnByLotsColorToRandomSample() {
-    let drawnColor = getActualRGBcodeTextContent();
+    let drawnColor = getActualRGBcode();
     let maxIndex = returnVisibleRowsNumber() * 3;
     let randomIndex = getRandomInt(maxIndex);
 

@@ -2,10 +2,10 @@
 
 export let rgbCode = document.querySelector(".rgb-code");
 
-export function setNewRGBcodeTextContent() {
+export function setNewRGBcode() {
     rgbCode.textContent = createNewRGBcode();
 }
-setNewRGBcodeTextContent();
+setNewRGBcode();
 
 export function createNewRGBcode() {
     let color = drawRGBcolor();
@@ -27,6 +27,6 @@ export function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
 
-export function getActualRGBcodeTextContent() {
+export function getActualRGBcode() {
     return document.querySelector(".rgb-code").textContent;
 }

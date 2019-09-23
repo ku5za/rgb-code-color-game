@@ -1,12 +1,12 @@
 'use strict';
 
-import { getActualRGBcodeTextContent, setNewRGBcodeTextContent } from "./../../rgb-code/rgb-code.js";
+import { getActualRGBcode, setNewRGBcode } from "./../../rgb-code/rgb-code.js";
 import { appendColorsToSamples } from '../../color-samples/color-samples.js';
 
 const correctGuessClassName = "color-samples__color-sample_checked";
 const wrongGuessClassName = "color-samples__color-sample_disabled";
 
-export function compareToDrawnRGBcode(colorSample) {
+function compareToDrawnRGBcode(colorSample) {
     if(matchesDrawnRGBcode(colorSample)) {
         markCorrectGuessedColorSample(colorSample);
         setDrawnByLotsColorToAllColorSamples();
@@ -17,7 +17,7 @@ export function compareToDrawnRGBcode(colorSample) {
 }
 
 function matchesDrawnRGBcode(colorSample) {
-    let actualRGBcode = getActualRGBcodeTextContent();
+    let actualRGBcode = getActualRGBcode();
 
     if(actualRGBcode === colorSample.style.backgroundColor.toUpperCase()) {
         return true;
@@ -29,7 +29,7 @@ function matchesDrawnRGBcode(colorSample) {
 
 function setDrawnByLotsColorToAllColorSamples() {
     let colorSamples = document.querySelectorAll(".color-samples__color-sample");
-    let actualRGBcode = getActualRGBcodeTextContent();
+    let actualRGBcode = getActualRGBcode();
     
     let timeout = 0;
     for(let i = 0; i < colorSamples.length; i++) {
@@ -47,7 +47,7 @@ function setDrawnByLotsColorToAllColorSamples() {
 
     window.setTimeout(() => {
         resetGuessedColorSamples();
-        setNewRGBcodeTextContent();
+        setNewRGBcode();
         appendColorsToSamples();
     }, timeout + 1000);
 }
@@ -80,7 +80,7 @@ function isAlreadyGuessedCorrectly() {
     }
 }
 
-export function resetGuessedColorSamples() {
+function resetGuessedColorSamples() {
     clearCorrectGuessedColorSample();
     clearWrongGuessedColorSamples();
 }
@@ -107,4 +107,9 @@ function clearWrongGuessedColorSample(colorSample) {
     if(colorSample) {
         colorSample.classList.remove(wrongGuessClassName);
     }
+}
+
+export {
+    compareToDrawnRGBcode,
+    resetGuessedColorSamples
 }

@@ -1,3 +1,6 @@
+@import url(./_hidden/color-samples__color-sample_hidden.css);
+@import url(./_checked/color-samples__color-sample_checked.css);
+
 .color-samples__color-sample {
     height: 8em;
     width: 8em;

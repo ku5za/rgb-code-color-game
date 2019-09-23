@@ -1,8 +1,5 @@
 @import url(./__color-sample/color-samples__color-sample.css);
 @import url(./__row/color-samples__row.css);
-@import url(./_hidden/color-samples__row_hidden.css);
-@import url(./_disabled/color-samples__color-sample_disabled.css);
-@import url(./_checked/color-samples__color-sample_checked.css);
 
 .color-samples {
     width: 100%;
