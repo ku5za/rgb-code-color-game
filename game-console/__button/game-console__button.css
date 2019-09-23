@@ -18,10 +18,6 @@
     cursor: pointer;
 }
 
-.game-console__button:focus {
-    border-color: black;
-}
-
 .game-console__button::before {
     content: "";
 

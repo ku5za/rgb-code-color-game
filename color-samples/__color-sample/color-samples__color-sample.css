@@ -1,6 +1,6 @@
 .color-samples__color-sample {
-    height: 12.5em;
-    width: 12.5em;
+    height: 8em;
+    width: 8em;
     border: 1px solid black;
     box-shadow: 0 0 black;
 
@@ -11,4 +11,11 @@
     cursor: pointer;
 
     box-shadow: .75rem .75rem black;
+}
+
+@media screen and (min-width: 500px) {
+    .color-samples__color-sample {
+        height: 12.5em;
+        width: 12.5em;
+    }
 }
