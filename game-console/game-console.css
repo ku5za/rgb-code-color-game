@@ -1,6 +1,6 @@
-@import url('__button/game-console__button.css');
-@import url('__buttons/game-console__buttons.css');
-@import url('__level-buttons/game-console__level-buttons.css');
+@import url('./__level-buttons/game-console__level-buttons.css');
+@import url('./__buttons/game-console__buttons.css');
+@import url('./__button/game-console__button.css');
 
 .game-console {
     padding: 0.5em;

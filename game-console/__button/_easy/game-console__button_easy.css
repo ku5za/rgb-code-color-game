@@ -1,7 +1,3 @@
-.game-console__button_easy::before {
-    background-color: green;
-}
-
 .game-console__button_easy::after {
     background-color: green;
 }

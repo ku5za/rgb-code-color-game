@@ -1,7 +1,3 @@
-.game-console__button_hard::before {
-    background-color: blue;
-}
-
 .game-console__button_hard::after {
     background-color: blue;
 }

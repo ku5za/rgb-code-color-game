@@ -1,7 +1,7 @@
 @import url('./_active/game-console__button_active.css');
+@import url('./_shuffle/game-console__button_shuffle.js');
 @import url('./_easy/game-console__button_easy.css');
 @import url('./_hard/game-console__button_hard.css');
-@import url('./_shuffle/game-console__button_shuffle.js');
 
 .game-console__button {
     min-height: 1em;
@@ -40,6 +40,15 @@
 
     transition: width .2s;
 }
+
+.game-console__button_easy::before {
+    background-color: green;
+}
+
+.game-console__button_hard::before {
+    background-color: blue;
+}
+
 
 .game-console__button:hover::before {
     content: "";
